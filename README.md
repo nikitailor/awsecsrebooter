@@ -198,8 +198,7 @@ Make sure the policy above and the trust relationship role below are added to yo
 }
 ```
 
-5. Create a scheduled task using Cron.
+5. Create a scheduled task on your cluster using Cron.
 
-
-
+** NOTE: The time is UTC so ensure you schedule the task appropriately for your region **
 
