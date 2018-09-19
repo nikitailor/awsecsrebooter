@@ -84,7 +84,7 @@ Make sure the policy above and the trust relationship role below are added to yo
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/kernelRebootYourClusterName",
-          "awslogs-region": "eu-west-1",
+          "awslogs-region": "yourregionhere",
           "awslogs-stream-prefix": "ecs"
         }
       },
