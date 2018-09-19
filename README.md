@@ -20,7 +20,6 @@ python /var/runtime/kernelRebootscheduler.py
 
 ```
 aws ecr get-login --no-include-email --region yourregionhere
-
 ```
 
 Login to docker using the command generated from the above, then you can tag and push the image to your repo.
@@ -29,7 +28,6 @@ Login to docker using the command generated from the above, then you can tag and
 docker tag yourtagname:yourversionnumber
 
 docker push youraccountid.dkr.ecr.yourregionhere.amazonaws.com/yourreponame:yourversionnumber
-
 ```
 
 3. Create a role and policy for the script to run.
