@@ -198,7 +198,20 @@ Make sure the policy above and the trust relationship role below are added to yo
 }
 ```
 
-5. Create a scheduled task on your cluster using Cron.
+5. Create a Fargate scheduled task on your cluster using Cron. Use the following variables as a guide for creating your scheduled task. Create a new securtiy group with permissions to access your cluster.
 
 ** NOTE: The time is UTC so ensure you schedule the task appropriately for your region **
 
+```
+Schedule expression cron(10 23 ? * SUN *)
+Rule state ENABLED
+Schedule description Runs the kernelRebootScheduler.
+Task Definition kernelRebootyourclustername:yourlatestrevision
+Launch type FARGATE
+Platform version LATEST
+ECS target yourclustername
+Target role ecsEventsRole
+Number of tasks 1
+Task definition role yourrolename
+Task role override --
+```
