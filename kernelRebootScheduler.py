@@ -62,7 +62,7 @@ def rebootEcsInstances():
                               could not be set to draining" % ec2instanceid)
                         return False
 
-                    mustend = datetime.utcnow() + timedelta(minutes=10)
+                    mustend = datetime.utcnow() + timedelta(minutes=30)
 
                     while datetime.utcnow() <= mustend:
                         taskcount = taskCounter(cluster, container_arns, arn)
@@ -75,8 +75,9 @@ def rebootEcsInstances():
                         else:
                             time.sleep(60)
                     else:
-                        # Abort after 10 minutes
-                        print("ERROR: Max time reached aborting")
+                        # Abort after 30 minutes and set container back to ACTIVE
+                        containerActivate(cluster, arnlist)
+                        print("ERROR: Max time reached setting container back to ACTIVE and aborting")
                         return False
 
 
