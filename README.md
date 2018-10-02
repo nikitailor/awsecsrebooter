@@ -25,7 +25,7 @@ aws ecr get-login --no-include-email --region yourregionhere
 Login to docker using the command generated from the above, then you can tag and push the image to your repo.
 
 ```
-docker tag yourtagname:yourversionnumber
+docker tag yourtagname:yourversionnumber youraccountid.dkr.ecr.yourregionhere.amazonaws.com/yourreponame:yourversionnumber
 
 docker push youraccountid.dkr.ecr.yourregionhere.amazonaws.com/yourreponame:yourversionnumber
 ```
